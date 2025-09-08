@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灵感引擎 - 科研创新平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-lightbulb"></i>
+                <span>灵感引擎</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">首页</a>
+                <a href="#explore" class="nav-link">探索</a>
+                <a href="#collaborate" class="nav-link">协作</a>
+                <a href="#insights" class="nav-link">洞察</a>
+                <a href="#profile" class="nav-link">个人</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-secondary">登录</button>
+                <button class="btn-primary">注册</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 首页区域 -->
+        <section id="home" class="section active">
+            <!-- 英雄区域 -->
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">点燃科研灵感<br><span class="gradient-text">跨越学科边界</span></h1>
+                    <p class="hero-subtitle">在这里，每一个想法都可能成为改变世界的创新。连接不同学科的智慧，让思想碰撞出璀璨火花。</p>
+                    <div class="hero-actions">
+                        <button class="btn-primary btn-large" onclick="showSection('explore')">
+                            <i class="fas fa-rocket"></i>
+                            开始探索
+                        </button>
+                        <button class="btn-outline btn-large" onclick="openIdeaModal()">
+                            <i class="fas fa-plus"></i>
+                            记录灵感
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-cards">
+                        <div class="idea-card" style="--delay: 0s">
+                            <i class="fas fa-dna"></i>
+                            <span>生物科学</span>
+                        </div>
+                        <div class="idea-card" style="--delay: 0.5s">
+                            <i class="fas fa-robot"></i>
+                            <span>人工智能</span>
+                        </div>
+                        <div class="idea-card" style="--delay: 1s">
+                            <i class="fas fa-atom"></i>
+                            <span>物理学</span>
+                        </div>
+                        <div class="idea-card" style="--delay: 1.5s">
+                            <i class="fas fa-chart-line"></i>
+                            <span>数据科学</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 特色功能 -->
+            <div class="features">
+                <div class="container">
+                    <h2 class="section-title">激发创新的核心功能</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>智能灵感匹配</h3>
+                            <p>基于AI算法，智能匹配相关研究领域和潜在合作者，发现意想不到的跨学科连接。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>协作研究空间</h3>
+                            <p>实时协作工具，支持多人同时编辑、讨论和分享研究想法，让团队合作更高效。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h3>知识图谱可视化</h3>
+                            <p>将复杂的学科关系和研究脉络以直观的图谱形式展现，帮助发现新的研究方向。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>灵感记录与管理</h3>
+                            <p>随时记录闪现的灵感，智能分类整理，让每一个想法都不会被遗忘。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 探索区域 -->
+        <section id="explore" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">探索研究前沿</h2>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="搜索研究领域、关键词或研究者..." id="searchInput">
+                        <button class="search-btn">搜索</button>
+                    </div>
+                </div>
+
+                <div class="explore-filters">
+                    <div class="filter-group">
+                        <label>学科领域：</label>
+                        <div class="filter-tags">
+                            <span class="filter-tag active" data-category="all">全部</span>
+                            <span class="filter-tag" data-category="ai">人工智能</span>
+                            <span class="filter-tag" data-category="bio">生物科学</span>
+                            <span class="filter-tag" data-category="physics">物理学</span>
+                            <span class="filter-tag" data-category="chemistry">化学</span>
+                            <span class="filter-tag" data-category="math">数学</span>
+                            <span class="filter-tag" data-category="cs">计算机科学</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-grid" id="researchGrid">
+                    <!-- 研究项目卡片将通过JavaScript动态生成 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 协作区域 -->
+        <section id="collaborate" class="section">
+            <div class="container">
+                <h2 class="section-title">协作研究空间</h2>
+                <div class="collaborate-content">
+                    <div class="active-projects">
+                        <h3>活跃项目</h3>
+                        <div class="project-list" id="projectList">
+                            <!-- 项目列表将通过JavaScript动态生成 -->
+                        </div>
+                        <button class="btn-primary" onclick="createNewProject()">
+                            <i class="fas fa-plus"></i>
+                            创建新项目
+                        </button>
+                    </div>
+                    <div class="collaboration-tools">
+                        <h3>协作工具</h3>
+                        <div class="tools-grid">
+                            <div class="tool-card">
+                                <i class="fas fa-comments"></i>
+                                <h4>实时讨论</h4>
+                                <p>与团队成员实时交流想法</p>
+                            </div>
+                            <div class="tool-card">
+                                <i class="fas fa-edit"></i>
+                                <h4>共同编辑</h4>
+                                <p>多人同时编辑研究文档</p>
+                            </div>
+                            <div class="tool-card">
+                                <i class="fas fa-share-alt"></i>
+                                <h4>资源共享</h4>
+                                <p>分享文献、数据和工具</p>
+                            </div>
+                            <div class="tool-card">
+                                <i class="fas fa-tasks"></i>
+                                <h4>任务管理</h4>
+                                <p>分配和跟踪研究任务</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 洞察区域 -->
+        <section id="insights" class="section">
+            <div class="container">
+                <h2 class="section-title">研究洞察</h2>
+                <div class="insights-dashboard">
+                    <div class="insight-card">
+                        <h3>热门研究趋势</h3>
+                        <div class="trend-chart" id="trendChart">
+                            <!-- 趋势图表 -->
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <h3>跨学科连接</h3>
+                        <div class="network-graph" id="networkGraph">
+                            <!-- 网络图 -->
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <h3>研究影响力</h3>
+                        <div class="impact-metrics">
+                            <div class="metric">
+                                <span class="metric-value">1,247</span>
+                                <span class="metric-label">活跃研究者</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">3,891</span>
+                                <span class="metric-label">研究项目</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">15,632</span>
+                                <span class="metric-label">灵感记录</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 个人区域 -->
+        <section id="profile" class="section">
+            <div class="container">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h2>张教授</h2>
+                        <p>计算机科学与人工智能研究</p>
+                        <div class="profile-stats">
+                            <span><i class="fas fa-lightbulb"></i> 128 个灵感</span>
+                            <span><i class="fas fa-project-diagram"></i> 15 个项目</span>
+                            <span><i class="fas fa-users"></i> 42 位合作者</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-content">
+                    <div class="profile-section">
+                        <h3>我的灵感</h3>
+                        <div class="ideas-list" id="userIdeas">
+                            <!-- 用户灵感列表 -->
+                        </div>
+                    </div>
+                    <div class="profile-section">
+                        <h3>参与项目</h3>
+                        <div class="projects-list" id="userProjects">
+                            <!-- 用户项目列表 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 灵感记录模态框 -->
+    <div id="ideaModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>记录新灵感</h3>
+                <button class="modal-close" onclick="closeIdeaModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="ideaForm">
+                    <div class="form-group">
+                        <label for="ideaTitle">灵感标题</label>
+                        <input type="text" id="ideaTitle" placeholder="给你的灵感起个名字...">
+                    </div>
+                    <div class="form-group">
+                        <label for="ideaDescription">详细描述</label>
+                        <textarea id="ideaDescription" placeholder="详细描述你的想法..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="ideaCategory">相关学科</label>
+                        <select id="ideaCategory">
+                            <option value="">选择学科领域</option>
+                            <option value="ai">人工智能</option>
+                            <option value="bio">生物科学</option>
+                            <option value="physics">物理学</option>
+                            <option value="chemistry">化学</option>
+                            <option value="math">数学</option>
+                            <option value="cs">计算机科学</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ideaTags">标签</label>
+                        <input type="text" id="ideaTags" placeholder="用逗号分隔多个标签...">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeIdeaModal()">取消</button>
+                <button class="btn-primary" onclick="saveIdea()">保存灵感</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目创建模态框 -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>创建新项目</h3>
+                <button class="modal-close" onclick="closeProjectModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="projectForm">
+                    <div class="form-group">
+                        <label for="projectTitle">项目名称</label>
+                        <input type="text" id="projectTitle" placeholder="项目名称...">
+                    </div>
+                    <div class="form-group">
+                        <label for="projectDescription">项目描述</label>
+                        <textarea id="projectDescription" placeholder="描述项目目标和内容..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectType">项目类型</label>
+                        <select id="projectType">
+                            <option value="research">基础研究</option>
+                            <option value="applied">应用研究</option>
+                            <option value="interdisciplinary">跨学科研究</option>
+                            <option value="innovation">创新项目</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeProjectModal()">取消</button>
+                <button class="btn-primary" onclick="createProject()">创建项目</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
